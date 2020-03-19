@@ -21,24 +21,15 @@ Target DLL:      lmidk-agdi.dll V???
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-D:\Embedded diploma\outside diploma\Rtos pro2\project.uvprojx
+D:\Embedded diploma\outside diploma\Rtos\Rtos Projects\Traffic Lights\project.uvprojx
 Project File Date:  03/11/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\KEIL\ARM\ARMCC\Bin'
-Rebuild target 'Target 1'
-assembling startup_TM4C123.s...
-compiling freertos_evr.c...
-compiling list.c...
-compiling heap_1.c...
-compiling system_TM4C123.c...
-compiling port.c...
-compiling timers.c...
-compiling queue.c...
+Build target 'Target 1'
 compiling main.c...
-compiling tasks.c...
 linking...
-Program Size: Code=10232 RO-data=652 RW-data=124 ZI-data=4948  
+Program Size: Code=9900 RO-data=668 RW-data=128 ZI-data=4944  
 ".\Objects\project.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -79,30 +70,30 @@ Package Vendor: Keil
       Include file:  Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.2.1
-      Include file:  Source\include\queue.h
-      Source file:   Source\list.c
-      Source file:   Source\queue.c
-      Include file:  Source\include\task.h
       Include file:  Source\include\FreeRTOS.h
-      Source file:   Source\tasks.c
+      Include file:  Source\include\queue.h
+      Source file:   Source\queue.c
       Include file:  Source\include\semphr.h
+      Source file:   Source\tasks.c
       Source file:   Source\portable\RVDS\ARM_CM4F\port.c
+      Source file:   Source\list.c
+      Include file:  Source\include\task.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Heap:Heap_1:10.2.1
       Source file:   Source\portable\MemMang\heap_1.c
 
    * Component: ARM.FreeRTOS::RTOS:Timers:10.2.1
-      Source file:   Source\timers.c
       Include file:  Source\include\timers.h
+      Source file:   Source\timers.c
 
    * Component: ARM::CMSIS:CORE:5.3.0
 
    * Component: Keil::Device:Startup:1.0.1
+      Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\ARM\startup_TM4C123.s
       Source file:   Device\Source\system_TM4C123.c
-      Include file:  Device\Include\TM4C123\TM4C123.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
