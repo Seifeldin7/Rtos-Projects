@@ -1,0 +1,126 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: medhat alhaddad, Ainshams uni, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\2-Assignments\project0\project0.uvprojx
+Project File Date:  03/20/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling retarget_io.c...
+compiling freertos_evr.c...
+compiling system_TM4C123.c...
+compiling port.c...
+compiling list.c...
+compiling heap_1.c...
+compiling timers.c...
+compiling queue.c...
+compiling tasks.c...
+compiling new.c...
+linking...
+Program Size: Code=10716 RO-data=676 RW-data=148 ZI-data=13140  
+".\Objects\project0.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS-FreeRTOS.10.3.0.pack
+                ARM.CMSIS-FreeRTOS.10.3.0
+                Bundle of FreeRTOS for Cortex-M and Cortex-A
+   * Component: Config Variant: FreeRTOS Version: 10.2.1
+   * Component: Core Variant: Cortex-M Version: 10.2.1
+   * Component: Heap Variant: Heap_1 Version: 10.2.1
+   * Component: Timers Version: 10.2.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.6.2.pack
+                Keil.ARM_Compiler.1.6.2
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: STDERR Variant: Breakpoint Version: 1.2.0
+   * Component: STDIN Variant: Breakpoint Version: 1.2.0
+   * Component: STDOUT Variant: Breakpoint Version: 1.2.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\RTOS
+  .\RTE\_Target_1
+  C:\Users\Medhat\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include
+  C:\Users\Medhat\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include
+  C:\Users\Medhat\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\portable\RVDS\ARM_CM4F
+  C:\Users\Medhat\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\Medhat\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM.FreeRTOS::RTOS:Config:FreeRTOS:10.2.1
+      Include file:  Config\ARMCM\FreeRTOSConfig.h
+
+   * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.2.1
+      Source file:   Source\tasks.c
+      Source file:   Source\portable\RVDS\ARM_CM4F\port.c
+      Include file:  Source\include\semphr.h
+      Include file:  Source\include\FreeRTOS.h
+      Include file:  Source\include\task.h
+      Include file:  Source\include\queue.h
+      Source file:   Source\list.c
+      Source file:   Source\queue.c
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
+
+   * Component: ARM.FreeRTOS::RTOS:Heap:Heap_1:10.2.1
+      Source file:   Source\portable\MemMang\heap_1.c
+
+   * Component: ARM.FreeRTOS::RTOS:Timers:10.2.1
+      Include file:  Source\include\timers.h
+      Source file:   Source\timers.c
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDERR:Breakpoint:1.2.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:Breakpoint:1.2.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.2.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device\Source\system_TM4C123.c
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
