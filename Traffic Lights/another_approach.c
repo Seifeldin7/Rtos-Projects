@@ -37,8 +37,8 @@ void GPIOF_Handler(void){
 	/*Pedestrian task should start from here*/
 	vTaskSuspendAll();
 }
-TaskHandle_t  first_handle = NULL;
-TaskHandle_t  second_handle = NULL;
+TaskHandle_t  EW_handle = NULL;
+TaskHandle_t  NS_handle = NULL;
 xQueueHandle xQueue = NULL;
 void vApplicationIdleHook(void){
 }
@@ -48,8 +48,8 @@ int main(void){
 	xQueue = xQueueCreate(2,sizeof(xData));	
   PortF_Init();  	// Call initialization of port PF3, PF2, PF1    
 	Btn_Interrupt_Init();
-	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &first_handle );
-	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 3, &second_handle );
+	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 3, &NS_handle );
+	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &EW_handle );
 	xTaskCreate( vControllerTask, (const portCHAR *)"Controller", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
 		/* Start the scheduler. */
 	vTaskStartScheduler();
@@ -84,11 +84,12 @@ static void vEWTask( void *pvParameters )
 	/* Continuously perform a calculation.  If the calculation result is ever
 	incorrect turn the LED on. */
 	xData dataToSend = { 1 , 2500 };
+	
 	for( ;; )
 	{
 		xQueueSendToBack(xQueue,&dataToSend,2);	
-		vTaskPrioritySet(NULL,2);
-		vTaskPrioritySet(first_handle,3);
+		
+		taskYIELD();
 	}
 }
 /*-----------------------------------------------------------*/
@@ -101,11 +102,12 @@ static void vNSTask( void *pvParameters )
 	/* Continuously perform a calculation.  If the calculation result is ever
 	incorrect turn the LED on. */
 	xData dataToSend = { 0 , 5000 };
+	
 	for( ;; )
 	{
 		xQueueSendToBack(xQueue,&dataToSend,2);
 		vTaskPrioritySet(NULL,2);
-		vTaskPrioritySet(second_handle,3);
+		taskYIELD();
 	}
 }
 /*-----------------------------------------------------------*/
