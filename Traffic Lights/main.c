@@ -9,10 +9,13 @@ void PortF_Init(void);
 static void vEWTask( void *pvParameters );
 static void vNSTask( void *pvParameters );
 static void vTRTask( void *pvParameters );
+static void vPDTask( void *pvParameters );
+
 
 TaskHandle_t  first_handle = NULL;
 TaskHandle_t  second_handle = NULL;
 TaskHandle_t  third_handle = NULL;
+TaskHandle_t  fourth_handle = NULL;
 
 unsigned char pd_flag = 0;
 unsigned char tr_flag = 0;
@@ -37,7 +40,7 @@ void Btn_Interrupt_Init(void){
 }
 void GPIOF_Handler(void){
   GPIO_PORTF_ICR_R = 0x10;      // acknowledge flag4
-  //tr_flag = 1;
+
 
   pd_flag = 1;
 }
@@ -53,7 +56,7 @@ int main(void){
 	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &first_handle );
 	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 3, &second_handle );
 	xTaskCreate( vTRTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 1, &third_handle );
-
+	xTaskCreate( vPDTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 4, &fourth_handle );
 		/* Start the scheduler. */
 	vTaskStartScheduler();
 }
@@ -74,7 +77,7 @@ static void vEWTask( void *pvParameters )
 		vTaskDelay(2500);
 		if(pd_flag)
 		{
-			GPIO_PORTF_DATA_R = 0x08;
+			vTaskResume(fourth_handle);
 			vTaskDelay(10000);
 			pd_flag = 0;
 		}
@@ -106,7 +109,8 @@ static void vNSTask( void *pvParameters )
 		//resume the first task and decrease the curret task priority to allow the first task to run
 		if(pd_flag)
 		{
-			GPIO_PORTF_DATA_R = 0x08;
+			//GPIO_PORTF_DATA_R = 0x08;
+			vTaskResume(fourth_handle);
 			vTaskDelay(10000);
 			pd_flag = 0;
 		}
@@ -115,6 +119,19 @@ static void vNSTask( void *pvParameters )
 	}
 }
 /*-----------------------------------------------------------*/
+static void vPDTask( void *pvParameters )
+{
+
+	/* Continuously perform a calculation.  If the calculation result is ever
+	incorrect turn the LED on. */
+	int current_task = 0;
+	for( ;; )
+	{
+		//Turn red LED on
+    GPIO_PORTF_DATA_R = 0x08;     // LED is red
+		vTaskSuspend(NULL);
+	}
+}
 static void vTRTask( void *pvParameters )
 {
 
@@ -142,7 +159,6 @@ static void vTRTask( void *pvParameters )
 			vTaskResume(first_handle);
 		}
 		
-		tr_flag = 0;
 		}
 		
 	}
