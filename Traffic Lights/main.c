@@ -19,6 +19,7 @@ static void vNSTask( void *pvParameters );
 static void vTRTask( void *pvParameters );
 static void vPDTask( void *pvParameters );
 
+
 TaskHandle_t  first_handle = NULL;
 TaskHandle_t  second_handle = NULL;
 TaskHandle_t  third_handle = NULL;
@@ -46,6 +47,7 @@ void Btn_Interrupt_Init(void){
 }
 void GPIOF_Handler(void){
   GPIO_PORTF_ICR_R = 0x10;      // acknowledge flag4
+
   pd_flag = 1;
 }
 
@@ -137,11 +139,13 @@ static void vPDTask( void *pvParameters )
 	for( ;; )
 	{
 		//Turn red LED on
+
 		if(pd_flag)
 		{
 			GPIO_PORTA_DATA_R = REDEW | REDNS;
 			GPIO_PORTF_DATA_R = 0x08;  
 		}  
+
 		vTaskSuspend(NULL);
 	}
 }
