@@ -4,18 +4,27 @@
 #include "task.h"
 #include "timers.h"
 #include "queue.h"
+
+
+#define REDNS 	(1<<3)
+#define GREENNS (1<<2)
+#define REDEW 	(1<<5)
+#define GREENEW (1<<4)
+
 void PortF_Init(void);
+void PortA_Init(void);
 
 static void vEWTask( void *pvParameters );
 static void vNSTask( void *pvParameters );
 static void vTRTask( void *pvParameters );
+static void vPDTask( void *pvParameters );
 
 TaskHandle_t  first_handle = NULL;
 TaskHandle_t  second_handle = NULL;
 TaskHandle_t  third_handle = NULL;
+TaskHandle_t  fourth_handle = NULL;
 
 unsigned char pd_flag = 0;
-unsigned char tr_flag = 0;
 xQueueHandle xQueue = NULL;
 
 void Btn_Interrupt_Init(void){                          
@@ -37,8 +46,6 @@ void Btn_Interrupt_Init(void){
 }
 void GPIOF_Handler(void){
   GPIO_PORTF_ICR_R = 0x10;      // acknowledge flag4
-  //tr_flag = 1;
-
   pd_flag = 1;
 }
 
@@ -48,12 +55,13 @@ void vApplicationIdleHook(void){
 
 int main(void){   
 	xQueue = xQueueCreate(1,sizeof(int));
-  PortF_Init();  	// Call initialization of port PF3, PF2, PF1    
+  PortF_Init(); 
+	PortA_Init();  
 	Btn_Interrupt_Init();
-	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &first_handle );
+  xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &first_handle );
 	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 3, &second_handle );
 	xTaskCreate( vTRTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 1, &third_handle );
-
+	xTaskCreate( vPDTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 4, &fourth_handle );
 		/* Start the scheduler. */
 	vTaskStartScheduler();
 }
@@ -67,15 +75,17 @@ static void vEWTask( void *pvParameters )
 	for( ;; )
 	{
 
-    GPIO_PORTF_DATA_R = 0x04;       // LED is blue
+    //GPIO_PORTF_DATA_R = 0x04;       // LED is blue
+		GPIO_PORTA_DATA_R = REDNS | GREENEW;
 		vTaskSuspend(second_handle);
 		xQueueReset(xQueue);
 		xQueueSendToBack(xQueue,&current_task,0);
 		vTaskDelay(2500);
 		if(pd_flag)
 		{
-			GPIO_PORTF_DATA_R = 0x08;
+			vTaskResume(fourth_handle);
 			vTaskDelay(10000);
+			GPIO_PORTF_DATA_R = 0;
 			pd_flag = 0;
 		}
 		vTaskResume(second_handle);
@@ -96,7 +106,8 @@ static void vNSTask( void *pvParameters )
 	for( ;; )
 	{
 		//Turn red LED on
-    GPIO_PORTF_DATA_R = 0x02;     // LED is red
+    //GPIO_PORTF_DATA_R = 0x02;     // LED is red
+		GPIO_PORTA_DATA_R = REDEW | GREENNS;
 		//Suspend first task to keep the red light
 		vTaskSuspend(first_handle);
 		xQueueReset(xQueue);
@@ -106,8 +117,10 @@ static void vNSTask( void *pvParameters )
 		//resume the first task and decrease the curret task priority to allow the first task to run
 		if(pd_flag)
 		{
-			GPIO_PORTF_DATA_R = 0x08;
+			//GPIO_PORTF_DATA_R = 0x08;
+			vTaskResume(fourth_handle);
 			vTaskDelay(10000);
+			GPIO_PORTF_DATA_R = 0;
 			pd_flag = 0;
 		}
 		vTaskResume(first_handle);
@@ -115,6 +128,23 @@ static void vNSTask( void *pvParameters )
 	}
 }
 /*-----------------------------------------------------------*/
+static void vPDTask( void *pvParameters )
+{
+
+	/* Continuously perform a calculation.  If the calculation result is ever
+	incorrect turn the LED on. */
+	int current_task = 0;
+	for( ;; )
+	{
+		//Turn red LED on
+		if(pd_flag)
+		{
+			GPIO_PORTA_DATA_R = REDEW | REDNS;
+			GPIO_PORTF_DATA_R = 0x08;  
+		}  
+		vTaskSuspend(NULL);
+	}
+}
 static void vTRTask( void *pvParameters )
 {
 
@@ -128,21 +158,21 @@ static void vTRTask( void *pvParameters )
 		xQueueReceive(xQueue,&current_task,2);
 		vTaskSuspend(first_handle);
 		vTaskSuspend(second_handle);
-    GPIO_PORTF_DATA_R = 0xFF; 
-		
+		GPIO_PORTA_DATA_R = REDEW | REDNS;
+		GPIO_PORTF_DATA_R = 0x02;
+
 		vTaskDelay(5000);
+		while(!(GPIO_PORTA_DATA_R & (1<<6))){}
+		GPIO_PORTF_DATA_R = 0;
 		if(current_task == 0)
 		{
-			 GPIO_PORTF_DATA_R = 0x02;
 			vTaskResume(second_handle);
 		}
 		else
 		{
-			 GPIO_PORTF_DATA_R = 0x04;
 			vTaskResume(first_handle);
 		}
 		
-		tr_flag = 0;
 		}
 		
 	}
@@ -166,4 +196,11 @@ void PortF_Init(void){
   GPIO_PORTF_DIR_R   &= ~(1<<0);
   GPIO_PORTF_PUR_R |=  (1<<0);
   GPIO_PORTF_DEN_R   |=   (1<<0) ;
+}
+
+void PortA_Init(void){ 
+  SYSCTL_RCGCGPIO_R |= (1<<0); // activate clock for port A
+  GPIO_PORTA_DIR_R = 0xFF;  
+  GPIO_PORTA_DEN_R = 0xFF;               
+  GPIO_PORTA_DIR_R   &= ~(1<<6);
 }

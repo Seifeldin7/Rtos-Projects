@@ -1,11 +1,11 @@
 Dependencies for Project 'project', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (.\main.c)(0x5E7523BF)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\portable\RVDS\ARM_CM4F-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="529" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5E7A63D9)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\portable\RVDS\ARM_CM4F-IC:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\LENOVO\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="529" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
 I (tm4c123gh6pm.h)(0x5E692202)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -34,7 +34,7 @@ F (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -55,7 +55,7 @@ I (D:\KEIL\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -70,7 +70,7 @@ I (D:\KEIL\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -85,7 +85,7 @@ F (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\port
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -102,7 +102,7 @@ I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\projdefs.h)(0x5DE7412E)
@@ -119,7 +119,7 @@ I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\projdefs.h)(0x5DE7412E)
@@ -136,7 +136,7 @@ I (D:\KEIL\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\FreeRTOS.h)(0x5DE7412E)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8845D4)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B2678)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5E692161)
@@ -149,4 +149,4 @@ I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\incl
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\list.h)(0x5DE7412E)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\queue.h)(0x5DE7412E)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include\timers.h)(0x5DE7412E)
-F (RTE\RTOS\FreeRTOSConfig.h)(0x5E6921A2)()
+F (RTE\RTOS\FreeRTOSConfig.h)(0x5E77AE10)()
