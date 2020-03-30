@@ -6,6 +6,11 @@
 #include "queue.h"
 #include "stdio.h"
 #include "new.h"
+#include "config.h"
+
+#define TASK_NO_NS 0
+#define TASK_NO_EW 1
+#define TASK_NO_PD 2
 
 void BTN_init(void)
 {
@@ -61,25 +66,22 @@ static void vControllerTask( void *pvParameters )
 	for( ;; )
 	{
 		xQueueReceive(xQueue,&taskData,2);
-		if(taskData.taskNo == 0)
+		if(taskData.taskNo == TASK_NO_NS)
 		{
-			// NS
-			GPIO_PORTF_DATA_R = 0x04;       // LED is blue
-			GPIO_PORTE_DATA_R = (1<<1) | (1<<2);       
+			BOARD_LED = BOARD_LED_BLUE;
+			TRAFFIC_LIGHT = TRAFFIC_GREEN_NS | TRAFFIC_RED_EW;
 			vTaskDelay(taskData.taskPeriod);
 		}
-		else if(taskData.taskNo == 1)
+		else if(taskData.taskNo == TASK_NO_EW)
 		{
-			// EW
-			GPIO_PORTF_DATA_R = 0x02;       // LED is red
-			GPIO_PORTE_DATA_R = (1<<0) | (1<<3);       
+			BOARD_LED = BOARD_LED_RED;
+			TRAFFIC_LIGHT = TRAFFIC_RED_NS | TRAFFIC_GREEN_EW;
 			vTaskDelay(taskData.taskPeriod);
 		}
-    else if(taskData.taskNo == 2)
+    else if(taskData.taskNo == TASK_NO_PD)
 		{
-			//PD
-			GPIO_PORTF_DATA_R = 0x08;       
-			GPIO_PORTE_DATA_R = (1<<0) | (1<<2);     
+			BOARD_LED = BOARD_LED_GREEN;
+			TRAFFIC_LIGHT = TRAFFIC_RED_NS | TRAFFIC_RED_EW;     
 			vTaskDelay(taskData.taskPeriod);
 		}
 	
@@ -120,69 +122,60 @@ static void vNSTask( void *pvParameters )
 	}
 }
 
-volatile unsigned long int data = 0;
 static void vPDTask( void *pvParameters ){
+	volatile unsigned long int pd_sw_value = 0;
 	xData taskData;
 	xData dataToSend = { 2 , 10000 };
-	unsigned char flag_low = 0x01 ;
+	unsigned char previous_pd_sw_value = 0x01 ;
 	for( ;; )
 	{
-		//input to predstrian port B 0
-		data = GPIO_PORTF_DATA_R & 0x01;
-		if((!(data)) && (flag_low == 0x01)){
+		pd_sw_value = PEDSTARIAN_SW;
+		if(!pd_sw_value && previous_pd_sw_value){
 			xQueueReceive(xQueue,&taskData,2);
 			xQueueReset(xQueue );
 			xQueueSendToBack(xQueue,&dataToSend,2);
 			xQueueSendToBack(xQueue,&taskData,2);
 		}
 		else{ vTaskDelay(10); }
-		flag_low = data;
+		previous_pd_sw_value = pd_sw_value;
 		vTaskPrioritySet(NULL,2);
 		taskYIELD();
 	}
 }
 
-volatile unsigned long int data1 = 0;
-volatile unsigned long int data2 = 0;
 
 static void vTRTask( void *pvParameters ) {
-	unsigned char flag_low1 = 0x10 ;	
-	unsigned char flag_low2 = 0x10 ;
 	for( ;; )
 	{
-		data1 = GPIO_PORTF_DATA_R & 0x10;
-		data2 = (GPIO_PORTE_DATA_R & (1<<4));
-		if((!(GPIO_PORTF_DATA_R & 0x10)) ){
+		if( !RTL_TRAIN_SW ){
 			vTaskSuspend(CR_handle);
 			for(int i = 0; i < 5; i++){
-				GPIO_PORTF_DATA_R = 0xFF;
-				GPIO_PORTE_DATA_R = (1<<0) | (1<<2); 
+				BOARD_LED = BOARD_LED_WHITE;
+				TRAFFIC_LIGHT = TRAFFIC_RED_EW | TRAFFIC_RED_NS; 
 				vTaskDelay(1000);
-				GPIO_PORTF_DATA_R = 0x00;
-				GPIO_PORTE_DATA_R = 0x00; 
+				BOARD_LED = BOARD_LED_OFF;
+				TRAFFIC_LIGHT = TRAFFIC_OFF; 
 				vTaskDelay(1000);
 			}
-			while(!(GPIO_PORTE_DATA_R & (1<<4))){}
+			while(!LTR_TRAIN_SW){}
 				vTaskDelay(200);
 			vTaskResume(CR_handle);
 		}
-		else if(((GPIO_PORTE_DATA_R & (1<<4))) ){
+		else if( !LTR_TRAIN_SW ){
 			vTaskSuspend(CR_handle);
 			for(int i = 0; i < 5; i++){
-				GPIO_PORTF_DATA_R = 0x04;
-				GPIO_PORTE_DATA_R = (1<<0) | (1<<2); 
+				BOARD_LED = BOARD_LED_RED;
+				TRAFFIC_LIGHT = TRAFFIC_RED_EW | TRAFFIC_RED_NS; 
 				vTaskDelay(1000);
-				GPIO_PORTF_DATA_R = 0x00;
-				GPIO_PORTE_DATA_R = 0x00; 
+				BOARD_LED = BOARD_LED_OFF;
+				TRAFFIC_LIGHT = TRAFFIC_OFF; 
 				vTaskDelay(1000);
 			}
-			while((GPIO_PORTF_DATA_R & (1<<4))){}
+			while( !RTL_TRAIN_SW ){}
 				vTaskDelay(200);
 			vTaskResume(CR_handle);
 		}
 		else{ vTaskDelay(10); }
-		flag_low1 = data1;
-		flag_low2 = data2;
 		vTaskPrioritySet(NULL,2);
 		taskYIELD();
 	}
