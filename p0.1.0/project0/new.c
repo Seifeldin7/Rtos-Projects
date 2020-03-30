@@ -96,7 +96,7 @@ static void vEWTask( void *pvParameters )
 
 	/* Continuously perform a calculation.  If the calculation result is ever
 	incorrect turn the LED on. */
-	xData dataToSend = { 1 , 2500 };
+	xData dataToSend = { TASK_NO_EW , 2500 };
 	
 	for( ;; )
 	{
@@ -112,7 +112,7 @@ static void vNSTask( void *pvParameters )
 
 	/* Continuously perform a calculation.  If the calculation result is ever
 	incorrect turn the LED on. */
-	xData dataToSend = { 0 , 5000 };
+	xData dataToSend = { TASK_NO_NS , 5000 };
 	
 	for( ;; )
 	{
@@ -125,7 +125,7 @@ static void vNSTask( void *pvParameters )
 static void vPDTask( void *pvParameters ){
 	volatile unsigned long int pd_sw_value = 0;
 	xData taskData;
-	xData dataToSend = { 2 , 10000 };
+	xData dataToSend = { TASK_NO_PD , 10000 };
 	unsigned char previous_pd_sw_value = 0x01 ;
 	for( ;; )
 	{
