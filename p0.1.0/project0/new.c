@@ -161,7 +161,7 @@ static void vTRTask( void *pvParameters ) {
 				vTaskDelay(200);
 			vTaskResume(CR_handle);
 		}
-		else if( !LTR_TRAIN_SW ){
+		else if( LTR_TRAIN_SW ){
 			vTaskSuspend(CR_handle);
 			for(int i = 0; i < 5; i++){
 				BOARD_LED = BOARD_LED_RED;
@@ -171,7 +171,7 @@ static void vTRTask( void *pvParameters ) {
 				TRAFFIC_LIGHT = TRAFFIC_OFF; 
 				vTaskDelay(1000);
 			}
-			while( !RTL_TRAIN_SW ){}
+			while( RTL_TRAIN_SW ){}
 				vTaskDelay(200);
 			vTaskResume(CR_handle);
 		}
