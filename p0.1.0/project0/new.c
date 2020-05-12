@@ -36,6 +36,7 @@ void PortE_Init(void){
 }
 
 
+
 void BTN_init(void)
 {
   SYSCTL_RCGCGPIO_R  |=  (1<<5);
@@ -107,6 +108,7 @@ static void vControllerTask( void *pvParameters )
 		else
 		{
 			//vPrintString("Couldn't Receive from Queue\n");
+
 		}
 		
 	}
@@ -118,9 +120,10 @@ static void vControllerTask( void *pvParameters )
 static void vEWTask( void *pvParameters )
 {
 
-	/* Initialize task data */
+
 	xData dataToSend = { TASK_NO_EW , 2500 };
 	portBASE_TYPE xStatus;
+
 	for( ;; )
 	{
 		/* Pass task data to the controller using queue*/
@@ -141,6 +144,7 @@ static void vNSTask( void *pvParameters )
 	/* Initialize task data */
 	xData dataToSend = { TASK_NO_NS , 5000 };
 	portBASE_TYPE xStatus;
+
 	for( ;; )
 	{
 		/* Pass task data to the controller using queue*/
