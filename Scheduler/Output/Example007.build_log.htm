@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Seif ELdin Mohamed, Ain shams, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  D:\KEIL_IDE\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DLM.DLL V1.26.0.0
+    Target DLL: AGDIRDI.DLL
+Dialog DLL:      TLM.DLL V1.24.0.0
+ 
+<h2>Project:</h2>
+D:\Embedded diploma\outside diploma\source-code-for-Cortex-M3-examples-using-the Keil-MDK-Simulator\Examples\Example007\Example007.uvproj
+Project File Date:  04/17/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\KEIL_IDE\ARM\ARMCC\Bin'
+Build target 'Source'
+compiling main.c...
+bool.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif /* BOOL_H_ */
+main.h(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* MAIN_H_ */
+main.c(86): warning:  #167-D: argument of type "void (*)(int *)" is incompatible with parameter of type "pdTASK_CODE"
+  		xTaskCreate( vTask, "Task", 120, &task_sent[i], tasks[i].priority, NULL );
+main.c(87): warning:  #223-D: function "vPrintStringAndNumber" declared implicitly
+  		vPrintStringAndNumber( "Task created",tasks[i].Ta);
+main.c(135): warning:  #223-D: function "vPrintStringAndNumber" declared implicitly
+  				vPrintStringAndNumber( "Handler task - Processing event",x);
+main.c(152): warning:  #223-D: function "vPrintStringAndNumber" declared implicitly
+  				vPrintStringAndNumber( "n= ", n);
+main.c(175): warning:  #223-D: function "vPrintString" declared implicitly
+  					vPrintString( "Tasks are not schedulable");
+main.c(180): warning:  #1-D: last line of file ends without a newline
+  /*-----------------------------------------------------------*/
+main.c(75): warning:  #177-D: function "initializeDataStructure"  was declared but never referenced
+  static void initializeDataStructure(void)
+main.c(91): warning:  #177-D: function "sortList"  was declared but never referenced
+  static void sortList(void)
+main.c: 10 warnings, 0 errors
+linking...
+Program Size: Code=6356 RO-data=224 RW-data=480 ZI-data=5608  
+".\Output\Example007.axf" - 0 Error(s), 10 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

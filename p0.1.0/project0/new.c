@@ -6,192 +6,14 @@
 #include "queue.h"
 #include "stdio.h"
 #include "new.h"
+#include "config.h"
 
-void BTN_init(void)
-{
-  SYSCTL_RCGCGPIO_R  |=  (1<<5);
-  GPIO_PORTF_LOCK_R = 0x4c4f434b;
-  GPIO_PORTF_CR_R = 0x01f;
-	GPIO_PORTF_AMSEL_R &= ~0x11;
-	GPIO_PORTF_PCTL_R &= ~0x11; 
-	GPIO_PORTF_AFSEL_R &= ~0x11;
-  GPIO_PORTF_DIR_R   &= ~(1<<4);
-  GPIO_PORTF_DIR_R   &= ~(1<<0);
-  GPIO_PORTF_PUR_R |= (1<<4) | (1<<0);
-  GPIO_PORTF_DEN_R   |=   (1<<0) | (1<<4);
-}
-
-/////////////////////////////////////////////////////////////////////////////
-
-
-
-typedef struct 
-{
-	unsigned char taskNo;
-	unsigned int taskPeriod;
-}xData;
-
-
-TaskHandle_t  EW_handle = NULL;
-TaskHandle_t  NS_handle = NULL;
-TaskHandle_t  PD_handle = NULL;
-TaskHandle_t  TR_handle = NULL;
-TaskHandle_t  CR_handle = NULL;
-xQueueHandle xQueue = NULL;
-
-int main(void){   
-	xQueue = xQueueCreate(2,sizeof(xData));	
-  PortF_Init();     
-	PortE_Init();
-	BTN_init();
-	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 2, &NS_handle );
-	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &EW_handle );
-	xTaskCreate( vPDTask, (const portCHAR *)"Pedestrian", configMINIMAL_STACK_SIZE, NULL, 3, &PD_handle );
-	xTaskCreate( vTRTask, (const portCHAR *)"Train", configMINIMAL_STACK_SIZE, NULL, 4, &TR_handle );
-	xTaskCreate( vControllerTask, (const portCHAR *)"Controller", configMINIMAL_STACK_SIZE, NULL, 1, &CR_handle );
-		/* Start the scheduler. */
-	vTaskStartScheduler();
-}
-static void vControllerTask( void *pvParameters )
-{
-
-	/* Continuously perform a calculation.  If the calculation result is ever
-	incorrect turn the LED on. */
-	xData taskData;
-	for( ;; )
-	{
-		xQueueReceive(xQueue,&taskData,2);
-		if(taskData.taskNo == 0)
-		{
-			// NS
-			GPIO_PORTF_DATA_R = 0x04;       // LED is blue
-			GPIO_PORTE_DATA_R = (1<<1) | (1<<2);       
-			vTaskDelay(taskData.taskPeriod);
-		}
-		else if(taskData.taskNo == 1)
-		{
-			// EW
-			GPIO_PORTF_DATA_R = 0x02;       // LED is red
-			GPIO_PORTE_DATA_R = (1<<0) | (1<<3);       
-			vTaskDelay(taskData.taskPeriod);
-		}
-    else if(taskData.taskNo == 2)
-		{
-			//PD
-			GPIO_PORTF_DATA_R = 0x08;       
-			GPIO_PORTE_DATA_R = (1<<0) | (1<<2);     
-			vTaskDelay(taskData.taskPeriod);
-		}
-	
-	}
-}
-
-
-/* ............................................................*/
-
-static void vEWTask( void *pvParameters )
-{
-
-	/* Continuously perform a calculation.  If the calculation result is ever
-	incorrect turn the LED on. */
-	xData dataToSend = { 1 , 2500 };
-	
-	for( ;; )
-	{
-		xQueueSendToBack(xQueue,&dataToSend,2);	
-		vTaskPrioritySet(NULL,2);
-		taskYIELD();
-	}
-}
-
-
-static void vNSTask( void *pvParameters )
-{
-
-	/* Continuously perform a calculation.  If the calculation result is ever
-	incorrect turn the LED on. */
-	xData dataToSend = { 0 , 5000 };
-	
-	for( ;; )
-	{
-		xQueueSendToBack(xQueue,&dataToSend,2);
-		vTaskPrioritySet(NULL,2);
-		taskYIELD();
-	}
-}
-
-volatile unsigned long int data = 0;
-static void vPDTask( void *pvParameters ){
-	xData taskData;
-	xData dataToSend = { 2 , 10000 };
-	unsigned char flag_low = 0x01 ;
-	for( ;; )
-	{
-		//input to predstrian port B 0
-		data = GPIO_PORTF_DATA_R & 0x01;
-		if((!(data)) && (flag_low == 0x01)){
-			xQueueReceive(xQueue,&taskData,2);
-			xQueueReset(xQueue );
-			xQueueSendToBack(xQueue,&dataToSend,2);
-			xQueueSendToBack(xQueue,&taskData,2);
-		}
-		else{ vTaskDelay(10); }
-		flag_low = data;
-		vTaskPrioritySet(NULL,2);
-		taskYIELD();
-	}
-}
-
-volatile unsigned long int data1 = 0;
-volatile unsigned long int data2 = 0;
-
-static void vTRTask( void *pvParameters ) {
-	unsigned char flag_low1 = 0x10 ;	
-	unsigned char flag_low2 = 0x10 ;
-	for( ;; )
-	{
-		data1 = GPIO_PORTF_DATA_R & 0x10;
-		data2 = (GPIO_PORTE_DATA_R & (1<<4));
-		if((!(GPIO_PORTF_DATA_R & 0x10)) ){
-			vTaskSuspend(CR_handle);
-			for(int i = 0; i < 5; i++){
-				GPIO_PORTF_DATA_R = 0xFF;
-				GPIO_PORTE_DATA_R = (1<<0) | (1<<2); 
-				vTaskDelay(1000);
-				GPIO_PORTF_DATA_R = 0x00;
-				GPIO_PORTE_DATA_R = 0x00; 
-				vTaskDelay(1000);
-			}
-			while(!(GPIO_PORTE_DATA_R & (1<<4))){}
-				vTaskDelay(200);
-			vTaskResume(CR_handle);
-		}
-		else if(((GPIO_PORTE_DATA_R & (1<<4))) ){
-			vTaskSuspend(CR_handle);
-			for(int i = 0; i < 5; i++){
-				GPIO_PORTF_DATA_R = 0x04;
-				GPIO_PORTE_DATA_R = (1<<0) | (1<<2); 
-				vTaskDelay(1000);
-				GPIO_PORTF_DATA_R = 0x00;
-				GPIO_PORTE_DATA_R = 0x00; 
-				vTaskDelay(1000);
-			}
-			while((GPIO_PORTF_DATA_R & (1<<4))){}
-				vTaskDelay(200);
-			vTaskResume(CR_handle);
-		}
-		else{ vTaskDelay(10); }
-		flag_low1 = data1;
-		flag_low2 = data2;
-		vTaskPrioritySet(NULL,2);
-		taskYIELD();
-	}
-	
-}
-
-/*-----------------------------------------------------------*/
-
-
+#define TASK_NO_NS 0
+#define TASK_NO_EW 1
+#define TASK_NO_PD 2
+/*******************************************************************************
+ *                      GPIO 	INITIALIZATION                                   *
+ *******************************************************************************/
 void PortF_Init(void){ 
   SYSCTL_RCGCGPIO_R |= 0x00000020; // activate clock for port F
   GPIO_PORTF_DIR_R |= 0x0E;  
@@ -209,15 +31,214 @@ void PortF_Init(void){
 void PortE_Init(void){ 
   SYSCTL_RCGCGPIO_R |= 0x00000010; // activate clock for port E
   GPIO_PORTE_DIR_R |= 0x0F;  
-  GPIO_PORTE_DEN_R |= 0x1F;     // enable digital I/O on PE4-PE0 
+  GPIO_PORTE_DEN_R |= 0xFF;     // enable digital I/O on PE4-PE0 
 	GPIO_PORTE_DIR_R &= ~(1<<4);
 }
 
 
+void BTN_init(void)
+{
+  SYSCTL_RCGCGPIO_R  |=  (1<<5);
+  GPIO_PORTF_LOCK_R = 0x4c4f434b;
+  GPIO_PORTF_CR_R = 0x01f;
+	GPIO_PORTF_AMSEL_R &= ~0x11;
+	GPIO_PORTF_PCTL_R &= ~0x11; 
+	GPIO_PORTF_AFSEL_R &= ~0x11;
+  GPIO_PORTF_DIR_R   &= ~(1<<4);
+  GPIO_PORTF_DIR_R   &= ~(1<<0);
+  GPIO_PORTF_PUR_R |= (1<<4) | (1<<0);
+  GPIO_PORTF_DEN_R   |=   (1<<0) | (1<<4);
+}
+
+/* ............................................................*/
 
 
 
+typedef struct 
+{
+	unsigned char taskNo;
+	unsigned int taskPeriod;
+}xData;
+
+/*Initialize Task Handles*/
+TaskHandle_t  EW_handle = NULL;
+TaskHandle_t  NS_handle = NULL;
+TaskHandle_t  PD_handle = NULL;
+TaskHandle_t  TR_handle = NULL;
+TaskHandle_t  CR_handle = NULL;
+
+/*Initialize Queue Handle*/
+xQueueHandle xQueue = NULL;
+
+static void vControllerTask( void *pvParameters )
+{
+
+	portBASE_TYPE xStatus;
+	xData taskData;
+	for( ;; )
+	{
+		/* Receive the data sent by a certain task */
+		xStatus = xQueueReceive(xQueue,&taskData,2);
+		if (xStatus == pdPASS)
+		{
+			/* Received Data sent by North-South task */
+			if(taskData.taskNo == TASK_NO_NS)
+			{
+				BOARD_LED = BOARD_LED_BLUE;
+				TRAFFIC_LIGHT = TRAFFIC_GREEN_NS | TRAFFIC_RED_EW;
+				vTaskDelay(taskData.taskPeriod / portTICK_RATE_MS);
+			}
+			/* Received Data sent by East-West task */
+			else if(taskData.taskNo == TASK_NO_EW)
+			{
+				BOARD_LED = BOARD_LED_RED;
+				TRAFFIC_LIGHT = TRAFFIC_RED_NS | TRAFFIC_GREEN_EW;
+				vTaskDelay(taskData.taskPeriod / portTICK_RATE_MS);
+			}
+			/* Received Data sent by Pedestrian task */
+			else if(taskData.taskNo == TASK_NO_PD)
+			{
+				BOARD_LED = BOARD_LED_GREEN;
+				TRAFFIC_LIGHT = TRAFFIC_RED_NS | TRAFFIC_RED_EW;     
+				vTaskDelay(taskData.taskPeriod / portTICK_RATE_MS);
+			}
+	
+		}
+		else
+		{
+			//vPrintString("Couldn't Receive from Queue\n");
+		}
+		
+	}
+}
+
+
+/* ............................................................*/
+
+static void vEWTask( void *pvParameters )
+{
+
+	/* Initialize task data */
+	xData dataToSend = { TASK_NO_EW , 2500 };
+	portBASE_TYPE xStatus;
+	for( ;; )
+	{
+		/* Pass task data to the controller using queue*/
+		xStatus = xQueueSendToBack(xQueue,&dataToSend,2);
+		if (xStatus != pdPASS)
+		{
+			//vPrintString("Couldn't Send to Queue\n");
+		}
+		vTaskPrioritySet(NULL,2);
+		taskYIELD();
+	}
+}
+
+
+static void vNSTask( void *pvParameters )
+{
+
+	/* Initialize task data */
+	xData dataToSend = { TASK_NO_NS , 5000 };
+	portBASE_TYPE xStatus;
+	for( ;; )
+	{
+		/* Pass task data to the controller using queue*/
+		xStatus = xQueueSendToBack(xQueue,&dataToSend,2);
+		if (xStatus != pdPASS)
+		{
+			//vPrintString("Couldn't Send to Queue\n");
+		}
+		vTaskPrioritySet(NULL,2);
+		taskYIELD();
+	}
+}
+
+static void vPDTask( void *pvParameters )
+{
+	volatile unsigned long int pd_sw_value = 0;
+	xData taskData;
+	xData dataToSend = { TASK_NO_PD , 10000 };
+	unsigned char previous_pd_sw_value = 0x01 ;
+	for( ;; )
+	{
+		pd_sw_value = PEDSTARIAN_SW;
+		/* If pedestrian button is pressed */
+		if(!pd_sw_value && previous_pd_sw_value){
+			xQueueReceive(xQueue,&taskData,2);
+			xQueueReset(xQueue );
+			/* Put pedestrian task data in the queue */
+			xQueueSendToBack(xQueue,&dataToSend,2);
+			xQueueSendToBack(xQueue,&taskData,2);
+		}
+		else{ vTaskDelay(10); }
+		previous_pd_sw_value = pd_sw_value;
+		vTaskPrioritySet(NULL,2);
+		taskYIELD();
+	}
+}
+
+
+static void vTRTask( void *pvParameters ) 
+{
+	for( ;; )
+	{
+		/* Continously check whether the button is pressed or not */
+		if( !RTL_TRAIN_SW ){
+			/* If pressed suspend the controller task so only train task is working */
+			vTaskSuspend(CR_handle);
+			/* Blink the led for 30 seconds for safety */
+			for(int i = 0; i < 15; i++){
+				BOARD_LED = BOARD_LED_WHITE;
+				TRAFFIC_LIGHT = TRAFFIC_RED_EW | TRAFFIC_RED_NS; 
+				vTaskDelay(1000 / portTICK_RATE_MS);
+				BOARD_LED = BOARD_LED_OFF;
+				TRAFFIC_LIGHT = TRAFFIC_OFF; 
+				vTaskDelay(1000 / portTICK_RATE_MS);
+			}
+			/* Don't continue unless the other switch is pressed (train left) */
+			while(!LTR_TRAIN_SW){}
+				vTaskDelay(200 / portTICK_RATE_MS);
+			vTaskResume(CR_handle);
+		}
+		/* Same as previous but in reverse order */
+		else if( LTR_TRAIN_SW ){
+			vTaskSuspend(CR_handle);
+			for(int i = 0; i < 15; i++){
+				BOARD_LED = BOARD_LED_RED;
+				TRAFFIC_LIGHT = TRAFFIC_RED_EW | TRAFFIC_RED_NS; 
+				vTaskDelay(1000 / portTICK_RATE_MS);
+				BOARD_LED = BOARD_LED_OFF;
+				TRAFFIC_LIGHT = TRAFFIC_OFF; 
+				vTaskDelay(1000 / portTICK_RATE_MS);
+			}
+			while( RTL_TRAIN_SW ){}
+				vTaskDelay(200);
+			vTaskResume(CR_handle);
+		}
+		else{ vTaskDelay(10); }
+		vTaskPrioritySet(NULL,2);
+		taskYIELD();
+	}
+	
+}
+int main(void)
+{   
+	xQueue = xQueueCreate(2,sizeof(xData));	
+  PortF_Init();     
+	PortE_Init();
+	BTN_init();
+		/* Tasks Creation */
+	xTaskCreate( vNSTask, (const portCHAR *)"North South", configMINIMAL_STACK_SIZE, NULL, 2, &NS_handle );
+	xTaskCreate( vEWTask, (const portCHAR *)"East West", configMINIMAL_STACK_SIZE, NULL, 2, &EW_handle );
+	xTaskCreate( vPDTask, (const portCHAR *)"Pedestrian", configMINIMAL_STACK_SIZE, NULL, 3, &PD_handle );
+	xTaskCreate( vTRTask, (const portCHAR *)"Train", configMINIMAL_STACK_SIZE, NULL, 4, &TR_handle );
+	xTaskCreate( vControllerTask, (const portCHAR *)"Controller", configMINIMAL_STACK_SIZE, NULL, 1, &CR_handle );
+		/* Start the scheduler. */
+	vTaskStartScheduler();
+}
+
+/*-----------------------------------------------------------*/
 
 void vApplicationIdleHook(void){
 }
-

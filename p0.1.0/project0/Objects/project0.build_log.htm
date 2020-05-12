@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.29.0.0
 Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Seif Eldin Mohamed, ain shams, LIC=----
+License Information: Seif ELdin Mohamed, Ain shams, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.29.0.0
-Toolchain Path:  D:\KEIL\ARM\ARMCC\Bin
+Toolchain Path:  D:\KEIL_IDE\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
@@ -22,22 +22,15 @@ Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
 D:\Embedded diploma\outside diploma\Rtos\Rtos Projects\p0.1.0\project0\project0.uvprojx
-Project File Date:  03/24/2020
+Project File Date:  03/31/2020
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\KEIL\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\KEIL_IDE\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling new.c...
-new.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-new.c(149): warning:  #550-D: variable "flag_low1"  was set but never used
-  	unsigned char flag_low1 = 0x10 ;	
-new.c(150): warning:  #550-D: variable "flag_low2"  was set but never used
-  	unsigned char flag_low2 = 0x10 ;
-new.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=10968 RO-data=676 RW-data=152 ZI-data=13136  
-".\Objects\project0.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=10884 RO-data=676 RW-data=140 ZI-data=13140  
+".\Objects\project0.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -73,11 +66,11 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   .\RTE\RTOS
   .\RTE\_Target_1
-  C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include
-  C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include
-  C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\portable\RVDS\ARM_CM4F
-  C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
-  C:\Users\LENOVO\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+  C:\Users\20111\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\CMSIS\RTOS2\FreeRTOS\Include
+  C:\Users\20111\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\include
+  C:\Users\20111\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.0\Source\portable\RVDS\ARM_CM4F
+  C:\Users\20111\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\20111\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 
 <h2>Collection of Component Files used:</h2>
 
@@ -85,14 +78,14 @@ Package Vendor: Keil
       Include file:  Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.2.1
-      Source file:   Source\list.c
-      Include file:  Source\include\semphr.h
-      Source file:   Source\portable\RVDS\ARM_CM4F\port.c
-      Include file:  Source\include\task.h
-      Source file:   Source\queue.c
       Source file:   Source\tasks.c
       Include file:  Source\include\FreeRTOS.h
+      Source file:   Source\list.c
+      Source file:   Source\portable\RVDS\ARM_CM4F\port.c
+      Include file:  Source\include\task.h
       Include file:  Source\include\queue.h
+      Include file:  Source\include\semphr.h
+      Source file:   Source\queue.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Heap:Heap_1:10.2.1
@@ -114,10 +107,10 @@ Package Vendor: Keil
       Source file:   Source\retarget_io.c
 
    * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device\Source\system_TM4C123.c
       Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\ARM\startup_TM4C123.s
-      Source file:   Device\Source\system_TM4C123.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
