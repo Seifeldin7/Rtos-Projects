@@ -16,13 +16,13 @@
  */
 #define CMSIS_device_header "TM4C123.h"
 
-/*  ARM.FreeRTOS::RTOS:Config:FreeRTOS:10.2.1 */
+/*  ARM.FreeRTOS::RTOS:Config:FreeRTOS:10.3.1 */
 #define RTE_RTOS_FreeRTOS_CONFIG        /* RTOS FreeRTOS Config for FreeRTOS API */
-/*  ARM.FreeRTOS::RTOS:Core:Cortex-M:10.2.1 */
+/*  ARM.FreeRTOS::RTOS:Core:Cortex-M:10.3.1 */
 #define RTE_RTOS_FreeRTOS_CORE          /* RTOS FreeRTOS Core */
-/*  ARM.FreeRTOS::RTOS:Heap:Heap_1:10.2.1 */
+/*  ARM.FreeRTOS::RTOS:Heap:Heap_1:10.3.1 */
 #define RTE_RTOS_FreeRTOS_HEAP_1        /* RTOS FreeRTOS Heap 1 */
-/*  ARM.FreeRTOS::RTOS:Timers:10.2.1 */
+/*  ARM.FreeRTOS::RTOS:Timers:10.3.1 */
 #define RTE_RTOS_FreeRTOS_TIMERS        /* RTOS FreeRTOS Timers */
 
 
