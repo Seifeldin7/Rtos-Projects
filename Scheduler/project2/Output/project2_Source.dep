@@ -1,95 +1,0 @@
-Dependencies for Project 'project2', Target 'Source': (DO NOT MODIFY !)
-CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (..\..\FreeRTOS-Source\list.c)(0x4D00F248)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\list.o --omf_browse .\output\list.crf --depend .\output\list.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-F (..\..\FreeRTOS-Source\queue.c)(0x4D00F24E)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\queue.o --omf_browse .\output\queue.crf --depend .\output\queue.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\string.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\croutine.h)(0x4CFA1710)
-F (..\..\FreeRTOS-Source\tasks.c)(0x4D00F258)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\tasks.o --omf_browse .\output\tasks.crf --depend .\output\tasks.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdio.h)(0x5D9B267A)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\string.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\StackMacros.h)(0x4CFA1710)
-F (..\..\FreeRTOS-Source\portable\MemMang\heap_1.c)(0x4D00F25E)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\heap_1.o --omf_browse .\output\heap_1.crf --depend .\output\heap_1.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-F (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\port.c)(0x4D00F422)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\port.o --omf_browse .\output\port.crf --depend .\output\port.d)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-F (.\main.c)(0x5EC1C3DF)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdio.h)(0x5D9B267A)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\semphr.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\queue.h)(0x4CFA1710)
-I (vector.h)(0x5EC13387)
-I (bool.h)(0x5EC121A8)
-F (..\..\FreeRTOS-Source\demo_code\basic_io.c)(0x4D02166E)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\basic_io.o --omf_browse .\output\basic_io.crf --depend .\output\basic_io.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdio.h)(0x5D9B267A)
-I (..\..\FreeRTOS-Source\include\FreeRTOS.h)(0x4CFA1710)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
-I (..\..\FreeRTOS-Source\include\projdefs.h)(0x4CFA1710)
-I (..\Example016\FreeRTOSConfig.h)(0x5EC1A748)
-I (..\..\FreeRTOS-Source\include\portable.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3\portmacro.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\mpu_wrappers.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\task.h)(0x4CFA1710)
-I (..\..\FreeRTOS-Source\include\list.h)(0x4CFA1710)
-F (.\vector.c)(0x5EC14129)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Example016 -I ..\..\FreeRTOS-Source\include -I ..\..\FreeRTOS-Source\portable\RVDS\ARM_CM3 -I ..\..\FreeRTOS-Source\demo_code-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"-D__UVISION_VERSION="529"-o .\output\vector.o --omf_browse .\output\vector.crf --depend .\output\vector.d)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdio.h)(0x5D9B267A)
-I (F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
-I (vector.h)(0x5EC13387)
-F (.\vector.h)(0x5EC13387)()
-F (.\main.h)(0x5EC10BB4)()
-F (.\bool.h)(0x5EC121A8)()
-F (.\startup_MPS_CM3.s)(0x5EC1385F)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\RV31\INC"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\CMSIS\Include"-I"F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\INC\Luminary"--pd "__UVISION_VERSION SETA 529"--list .\startup_mps_cm3.lst --xref -o .\output\startup_mps_cm3.o --depend .\output\startup_mps_cm3.d)

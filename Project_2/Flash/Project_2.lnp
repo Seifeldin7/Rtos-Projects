@@ -1,0 +1,17 @@
+--cpu Cortex-M3
+".\flash\basic_io.o"
+".\flash\vector.o"
+".\flash\main.o"
+".\flash\eventrecorder.o"
+".\flash\startup_armcm3.o"
+".\flash\system_armcm3.o"
+".\flash\freertos_evr.o"
+".\flash\list.o"
+".\flash\heap_4.o"
+".\flash\port.o"
+".\flash\queue.o"
+".\flash\tasks.o"
+--library_type=microlib --strict --scatter ".\Flash\Project_2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Flash\Project_2.map" -o .\Flash\Project_2.axf
