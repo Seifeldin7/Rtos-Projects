@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\Project_2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Project_2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu May 21 03:40:48 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri May 29 22:29:42 2020
 <BR><P>
 <H3>Maximum Stack Usage =        288 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -94,26 +94,26 @@ Global Symbols
 
 <P><STRONG><a name="[13a]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[67]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_inc8</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<P><STRONG><a name="[66]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_inc8</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
 
-<P><STRONG><a name="[58]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_inc32</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[57]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_inc32</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
-<P><STRONG><a name="[6b]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_xch32</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<P><STRONG><a name="[6a]"></a>__asm___15_EventRecorder_c_e8d3082c__atomic_xch32</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
 </UL>
 
-<P><STRONG><a name="[59]"></a>__asm___15_EventRecorder_c_e8d3082c__LockRecord</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[58]"></a>__asm___15_EventRecorder_c_e8d3082c__LockRecord</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
-<P><STRONG><a name="[5a]"></a>__asm___15_EventRecorder_c_e8d3082c__UnlockRecord</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[59]"></a>__asm___15_EventRecorder_c_e8d3082c__UnlockRecord</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, eventrecorder.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, port.o(.emb_text))
@@ -167,7 +167,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vector_resize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 </UL>
 
@@ -202,92 +202,85 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
-<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, main.o(.text))
+<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = main &rArr; static_task_admittance &rArr; xQueueGenericSend &rArr; prvUnlockQueue &rArr; prvNotifyQueueSetContainer &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;srand
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateMutex
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vector_init
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[6a]"></a>EventRecorderTimerGetCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, eventrecorder.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<P><STRONG><a name="[69]"></a>EventRecorderTimerGetCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, eventrecorder.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
 </UL>
 
-<P><STRONG><a name="[5f]"></a>EventRecorderTimerSetup</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, eventrecorder.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<P><STRONG><a name="[5e]"></a>EventRecorderTimerSetup</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 </UL>
 
-<P><STRONG><a name="[61]"></a>EventRecorderTimerGetFreq</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, eventrecorder.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<P><STRONG><a name="[60]"></a>EventRecorderTimerGetFreq</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 </UL>
 
-<P><STRONG><a name="[5b]"></a>EventRecorderStart</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, eventrecorder.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = EventRecorderStart &rArr; EventRecordItem
+<P><STRONG><a name="[5a]"></a>EventRecorderStart</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
-</UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 </UL>
 
-<P><STRONG><a name="[60]"></a>EventRecorderEnable</STRONG> (Thumb, 90 bytes, Stack size 28 bytes, eventrecorder.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = EventRecorderEnable
-</UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
+<P><STRONG><a name="[5f]"></a>EventRecorderEnable</STRONG> (Thumb, 90 bytes, Stack size 28 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 </UL>
 
-<P><STRONG><a name="[5d]"></a>EventRecorderInitialize</STRONG> (Thumb, 248 bytes, Stack size 32 bytes, eventrecorder.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = EventRecorderInitialize &rArr; EventRecorderStart &rArr; EventRecordItem
+<P><STRONG><a name="[5c]"></a>EventRecorderInitialize</STRONG> (Thumb, 248 bytes, Stack size 32 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerSetup
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderEnable
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerSetup
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderEnable
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
-</UL>
-<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
 </UL>
 
 <P><STRONG><a name="[13c]"></a>EventRecorderDisable</STRONG> (Thumb, 88 bytes, Stack size 28 bytes, eventrecorder.o(.text), UNUSED)
 
-<P><STRONG><a name="[62]"></a>EventRecorderStop</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, eventrecorder.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[61]"></a>EventRecorderStop</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
-<P><STRONG><a name="[63]"></a>EventRecorderClockUpdate</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, eventrecorder.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[62]"></a>EventRecorderClockUpdate</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
-<P><STRONG><a name="[64]"></a>EventRecordData</STRONG> (Thumb, 244 bytes, Stack size 40 bytes, eventrecorder.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[63]"></a>EventRecordData</STRONG> (Thumb, 244 bytes, Stack size 40 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 
-<P><STRONG><a name="[68]"></a>EventRecord2</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, eventrecorder.o(.text))
+<P><STRONG><a name="[67]"></a>EventRecord2</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, eventrecorder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSHeap_Free
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSHeap_Malloc
@@ -365,14 +358,14 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSTasks_TaskDelete
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSTasks_TaskCreateFailed
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSTasks_TaskCreate
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSSetup
 </UL>
 
-<P><STRONG><a name="[69]"></a>EventRecord4</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, eventrecorder.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
+<P><STRONG><a name="[68]"></a>EventRecord4</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, eventrecorder.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSEventGroups_EventGroupWaitBitsEnd
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSEventGroups_EventGroupSyncEnd
@@ -510,38 +503,34 @@ Global Symbols
 <P><STRONG><a name="[25]"></a>SystemInit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, system_armcm3.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_armcm3.o(.text)
 </UL>
-<P><STRONG><a name="[54]"></a>EvrFreeRTOSSetup</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, freertos_evr.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = EvrFreeRTOSSetup &rArr; EventRecorderInitialize &rArr; EventRecorderStart &rArr; EventRecordItem
-</UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderEnable
-</UL>
-<BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[6b]"></a>EvrFreeRTOSSetup</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderEnable
 </UL>
 
 <P><STRONG><a name="[6c]"></a>EvrFreeRTOSTasks_TaskCreate</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskCreate &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 </UL>
 
 <P><STRONG><a name="[6d]"></a>EvrFreeRTOSTasks_TaskCreateFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[6e]"></a>EvrFreeRTOSTasks_TaskDelete</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskDelete &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 </UL>
 
 <P><STRONG><a name="[6f]"></a>EvrFreeRTOSTasks_TaskDelayUntil</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
 </UL>
@@ -549,7 +538,7 @@ Global Symbols
 <P><STRONG><a name="[70]"></a>EvrFreeRTOSTasks_TaskDelay</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskDelay &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
@@ -557,25 +546,25 @@ Global Symbols
 <P><STRONG><a name="[71]"></a>EvrFreeRTOSTasks_TaskPrioritySet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskPrioritySet &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
 </UL>
 
 <P><STRONG><a name="[72]"></a>EvrFreeRTOSTasks_TaskSuspend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
 </UL>
 
 <P><STRONG><a name="[73]"></a>EvrFreeRTOSTasks_TaskResume</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
 </UL>
 
 <P><STRONG><a name="[74]"></a>EvrFreeRTOSTasks_TaskResumeFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
 </UL>
@@ -583,7 +572,7 @@ Global Symbols
 <P><STRONG><a name="[75]"></a>EvrFreeRTOSTasks_TaskIncrementTick</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskIncrementTick &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>
@@ -591,7 +580,7 @@ Global Symbols
 <P><STRONG><a name="[76]"></a>EvrFreeRTOSTasks_IncreaseTickCount</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_IncreaseTickCount &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStepTick
 </UL>
@@ -599,7 +588,7 @@ Global Symbols
 <P><STRONG><a name="[77]"></a>EvrFreeRTOSTasks_TaskSwitchedOut</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskSwitchedOut &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
@@ -607,16 +596,16 @@ Global Symbols
 <P><STRONG><a name="[78]"></a>EvrFreeRTOSTasks_TaskSwitchedIn</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskSwitchedIn &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
 <P><STRONG><a name="[79]"></a>EvrFreeRTOSTasks_TaskPriorityInherit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskPriorityInherit &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityInherit
 </UL>
@@ -624,7 +613,7 @@ Global Symbols
 <P><STRONG><a name="[7a]"></a>EvrFreeRTOSTasks_TaskPriorityDisinherit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_TaskPriorityDisinherit &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityDisinheritAfterTimeout
@@ -633,7 +622,7 @@ Global Symbols
 <P><STRONG><a name="[7b]"></a>EvrFreeRTOSTasks_MovedTaskToReadyState</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_MovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
@@ -655,7 +644,7 @@ Global Symbols
 <P><STRONG><a name="[7c]"></a>EvrFreeRTOSTasks_PostMovedTaskToReadyState</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
@@ -677,7 +666,7 @@ Global Symbols
 <P><STRONG><a name="[7d]"></a>EvrFreeRTOSTasks_LowPowerIdleBegin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_LowPowerIdleBegin &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask
 </UL>
@@ -685,49 +674,49 @@ Global Symbols
 <P><STRONG><a name="[7e]"></a>EvrFreeRTOSTasks_LowPowerIdleEnd</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSTasks_LowPowerIdleEnd &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask
 </UL>
 
 <P><STRONG><a name="[7f]"></a>EvrFreeRTOSTasks_TaskNotifyTakeBlock</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
 </UL>
 
 <P><STRONG><a name="[80]"></a>EvrFreeRTOSTasks_TaskNotifyTake</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
 </UL>
 
 <P><STRONG><a name="[81]"></a>EvrFreeRTOSTasks_TaskNotifyWaitBlock</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
 </UL>
 
 <P><STRONG><a name="[82]"></a>EvrFreeRTOSTasks_TaskNotifyWait</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
 </UL>
 
 <P><STRONG><a name="[83]"></a>EvrFreeRTOSTasks_TaskNotify</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
 </UL>
 
 <P><STRONG><a name="[84]"></a>EvrFreeRTOSTasks_TaskNotifyFromIsr</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
 </UL>
 
 <P><STRONG><a name="[85]"></a>EvrFreeRTOSTasks_TaskNotifyGiveFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
 </UL>
@@ -735,7 +724,7 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>EvrFreeRTOSQueue_QueueCreate</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueCreate &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
@@ -743,7 +732,7 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>EvrFreeRTOSQueue_QueueCreateFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueCreateFailed &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
@@ -751,7 +740,7 @@ Global Symbols
 <P><STRONG><a name="[88]"></a>EvrFreeRTOSQueue_CreateMutex</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_CreateMutex &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateMutex
 </UL>
@@ -759,43 +748,43 @@ Global Symbols
 <P><STRONG><a name="[89]"></a>EvrFreeRTOSQueue_CreateMutexFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_CreateMutexFailed &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateMutex
 </UL>
 
 <P><STRONG><a name="[8a]"></a>EvrFreeRTOSQueue_GiveMutexRecursive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveMutexRecursive
 </UL>
 
 <P><STRONG><a name="[8b]"></a>EvrFreeRTOSQueue_GiveMutexRecursiveFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveMutexRecursive
 </UL>
 
 <P><STRONG><a name="[8c]"></a>EvrFreeRTOSQueue_TakeMutexRecursive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueTakeMutexRecursive
 </UL>
 
 <P><STRONG><a name="[8d]"></a>EvrFreeRTOSQueue_TakeMutexRecursiveFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueTakeMutexRecursive
 </UL>
 
 <P><STRONG><a name="[8e]"></a>EvrFreeRTOSQueue_CreateCountingSemaphore</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateCountingSemaphore
 </UL>
 
 <P><STRONG><a name="[8f]"></a>EvrFreeRTOSQueue_CreateCountingSemaphoreFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateCountingSemaphore
 </UL>
@@ -803,7 +792,7 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>EvrFreeRTOSQueue_QueueSend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueSend &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvNotifyQueueSetContainer
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
@@ -812,7 +801,7 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>EvrFreeRTOSQueue_QueueSendFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueSendFailed &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
@@ -820,26 +809,26 @@ Global Symbols
 <P><STRONG><a name="[92]"></a>EvrFreeRTOSQueue_QueueReceive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueReceive &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
 </UL>
 
 <P><STRONG><a name="[93]"></a>EvrFreeRTOSQueue_QueuePeek</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeek
 </UL>
 
 <P><STRONG><a name="[94]"></a>EvrFreeRTOSQueue_QueuePeekFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeek
 </UL>
 
 <P><STRONG><a name="[95]"></a>EvrFreeRTOSQueue_QueuePeekFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
 </UL>
@@ -847,58 +836,58 @@ Global Symbols
 <P><STRONG><a name="[96]"></a>EvrFreeRTOSQueue_QueueReceiveFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_QueueReceiveFailed &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
 </UL>
 
 <P><STRONG><a name="[97]"></a>EvrFreeRTOSQueue_QueueSendFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 </UL>
 
 <P><STRONG><a name="[98]"></a>EvrFreeRTOSQueue_QueueSendFromIsrFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 </UL>
 
 <P><STRONG><a name="[99]"></a>EvrFreeRTOSQueue_QueueReceiveFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
 </UL>
 
 <P><STRONG><a name="[9a]"></a>EvrFreeRTOSQueue_QueueReceiveFromIsrFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
 </UL>
 
 <P><STRONG><a name="[9b]"></a>EvrFreeRTOSQueue_QueuePeekFromIsrFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
 </UL>
 
 <P><STRONG><a name="[9c]"></a>EvrFreeRTOSQueue_QueueDelete</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueDelete
 </UL>
 
 <P><STRONG><a name="[9d]"></a>EvrFreeRTOSQueue_QueueRegistryAdd</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[9e]"></a>EvrFreeRTOSQueue_BlockingOnQueueReceive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_BlockingOnQueueReceive &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
@@ -907,139 +896,139 @@ Global Symbols
 <P><STRONG><a name="[9f]"></a>EvrFreeRTOSQueue_BlockingOnQueueSend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSQueue_BlockingOnQueueSend &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
 
 <P><STRONG><a name="[a0]"></a>EvrFreeRTOSTimers_TimerCreate</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[a1]"></a>EvrFreeRTOSTimers_TimerCreateFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[a2]"></a>EvrFreeRTOSTimers_TimerCommandSend</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[a3]"></a>EvrFreeRTOSTimers_TimerCommandReceived</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[a4]"></a>EvrFreeRTOSTimers_TimerExpired</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[a5]"></a>EvrFreeRTOSTimers_PendFuncCall</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[a6]"></a>EvrFreeRTOSTimers_PendFuncCallFromIsr</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[a7]"></a>EvrFreeRTOSEventGroups_EventGroupCreate</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[a8]"></a>EvrFreeRTOSEventGroups_EventGroupCreateFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[a9]"></a>EvrFreeRTOSEventGroups_EventGroupSyncBlock</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[aa]"></a>EvrFreeRTOSEventGroups_EventGroupSyncEnd</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[ab]"></a>EvrFreeRTOSEventGroups_EventGroupWaitBitsBlock</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[ac]"></a>EvrFreeRTOSEventGroups_EventGroupWaitBitsEnd</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 </UL>
 
 <P><STRONG><a name="[ad]"></a>EvrFreeRTOSEventGroups_EventGroupClearBits</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[ae]"></a>EvrFreeRTOSEventGroups_EventGroupClearBitsFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[af]"></a>EvrFreeRTOSEventGroups_EventGroupSetBits</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b0]"></a>EvrFreeRTOSEventGroups_EventGroupSetBitsFromIsr</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b1]"></a>EvrFreeRTOSEventGroups_EventGroupDelete</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b2]"></a>EvrFreeRTOSStreamBuf_StreamBufferCreateFailed</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b3]"></a>EvrFreeRTOSStreamBuf_StreamBufferCreateStaticFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b4]"></a>EvrFreeRTOSStreamBuf_StreamBufferCreate</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b5]"></a>EvrFreeRTOSStreamBuf_StreamBufferDelete</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b6]"></a>EvrFreeRTOSStreamBuf_StreamBufferReset</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b7]"></a>EvrFreeRTOSStreamBuf_StreamBufferBlockingOnSend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b8]"></a>EvrFreeRTOSStreamBuf_StreamBufferSend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[b9]"></a>EvrFreeRTOSStreamBuf_StreamBufferSendFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[ba]"></a>EvrFreeRTOSStreamBuf_StreamBufferSendFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[bb]"></a>EvrFreeRTOSStreamBuf_StreamBufferBlockingOnReceive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[bc]"></a>EvrFreeRTOSStreamBuf_StreamBufferReceive</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[bd]"></a>EvrFreeRTOSStreamBuf_StreamBufferReceiveFailed</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[be]"></a>EvrFreeRTOSStreamBuf_StreamBufferReceiveFromIsr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 
 <P><STRONG><a name="[bf]"></a>EvrFreeRTOSHeap_Malloc</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSHeap_Malloc &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
@@ -1047,7 +1036,7 @@ Global Symbols
 <P><STRONG><a name="[c0]"></a>EvrFreeRTOSHeap_Free</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, freertos_evr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = EvrFreeRTOSHeap_Free &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 </UL>
@@ -1161,7 +1150,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSetupTimerInterrupt
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___6_port_c_39a90d8d__prvStartFirstTask
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
 <P><STRONG><a name="[104]"></a>vPortEndScheduler</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, port.o(.text), UNUSED)
@@ -1306,7 +1295,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveMutexRecursive
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateMutex
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SchedulerGatekeeperTask
 </UL>
@@ -1505,7 +1494,7 @@ Global Symbols
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_main
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SchedulerGatekeeperTask
@@ -1684,7 +1673,7 @@ Global Symbols
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrFreeRTOSTasks_TaskResumeFromIsr
 </UL>
 
-<P><STRONG><a name="[56]"></a>vTaskStartScheduler</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, tasks.o(.text))
+<P><STRONG><a name="[55]"></a>vTaskStartScheduler</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, tasks.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = vTaskStartScheduler &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
@@ -1950,7 +1939,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4b]"></a>rand</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, rand.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;generate_task
 </UL>
@@ -1959,10 +1948,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[66]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<P><STRONG><a name="[65]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;internal_alloc
 </UL>
 
@@ -1984,8 +1973,8 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[5e]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<P><STRONG><a name="[5d]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 </UL>
 
 <P><STRONG><a name="[151]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -2176,7 +2165,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;generate_task
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isSchedulable
@@ -2238,7 +2227,7 @@ Local Symbols
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vector_add
 </UL>
 
-<P><STRONG><a name="[3a]"></a>set_priority</STRONG> (Thumb, 160 bytes, Stack size 32 bytes, main.o(.text))
+<P><STRONG><a name="[3a]"></a>set_priority</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = set_priority &rArr; vTaskPrioritySet &rArr; EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
@@ -2286,7 +2275,7 @@ Local Symbols
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 </UL>
 
@@ -2301,7 +2290,7 @@ Local Symbols
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;static_task_admittance
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dynamic_task_admittance
 </UL>
 
@@ -2320,7 +2309,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
-<P><STRONG><a name="[55]"></a>static_task_admittance</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, main.o(.text))
+<P><STRONG><a name="[54]"></a>static_task_admittance</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = static_task_admittance &rArr; xQueueGenericSend &rArr; prvUnlockQueue &rArr; prvNotifyQueueSetContainer &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
@@ -2333,42 +2322,42 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[57]"></a>EventRecordItem</STRONG> (Thumb, 162 bytes, Stack size 56 bytes, eventrecorder.o(.text))
+<P><STRONG><a name="[56]"></a>EventRecordItem</STRONG> (Thumb, 162 bytes, Stack size 56 bytes, eventrecorder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__UnlockRecord
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__LockRecord
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__UnlockRecord
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__LockRecord
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
 </UL>
 
-<P><STRONG><a name="[5c]"></a>EventGetTS</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, eventrecorder.o(.text))
+<P><STRONG><a name="[5b]"></a>EventGetTS</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, eventrecorder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = EventGetTS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetCount
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_xch32
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetCount
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_xch32
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
 </UL>
 
-<P><STRONG><a name="[65]"></a>EventCheckFilter</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, eventrecorder.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<P><STRONG><a name="[64]"></a>EventCheckFilter</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, eventrecorder.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
 
 <P><STRONG><a name="[c3]"></a>prvInsertBlockIntoFreeList</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, heap_4.o(.text))
@@ -2388,7 +2377,7 @@ Local Symbols
 <P><STRONG><a name="[d3]"></a>prvCopyDataToQueue</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, queue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; EvrFreeRTOSTasks_PostMovedTaskToReadyState &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
@@ -2427,7 +2416,7 @@ Local Symbols
 <P><STRONG><a name="[e7]"></a>prvCopyDataFromQueue</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, queue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = prvCopyDataFromQueue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
@@ -2576,7 +2565,7 @@ Local Symbols
 <P><STRONG><a name="[12f]"></a>internal_alloc</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, mallocr.o(i.internal_alloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = internal_alloc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;realloc
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc

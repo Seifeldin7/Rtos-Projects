@@ -50,7 +50,7 @@ static void dynamic_task_admittance( void *pvParameters );
 static void SchedulerGatekeeperTask( void *pvParameters );
 static int isSchedulable(float addedUcpu);
 static void swap(int xp, int yp);
-static int* sortTask(int* sorted_index);
+static void sortTask(int arr[], int n);
 static void set_priority(void);
 
 static void vTaskCreate( void *pvParameters );
@@ -83,7 +83,7 @@ int main (void) {
 
 		srand( 567 );
 		SystemCoreClockUpdate();
-		EvrFreeRTOSSetup(0);
+		//EvrFreeRTOSSetup(0);
 		static_task_admittance();
 		xTaskCreate (app_main, "app_main", 64, NULL, tskIDLE_PRIORITY+1, NULL);
 
@@ -242,33 +242,30 @@ static void swap(int xp, int yp) {
     xp = yp; 
     yp = temp; 
 }
-static int* sortTask(int* sorted_index){
-	int max_idx; 
-	for(int i = 0; i < currentTasks.total; i++){
-		sorted_index[i] = i;
-	}
-	
-	for (int i = 0; i < currentTasks.total-1; i++) 
-	{
-			max_idx = i; 
-			for (int j = i+1; j < currentTasks.total; j++) 
-				if (((xTask*) vector_get(&currentTasks, j))->Tp > ((xTask*) vector_get(&currentTasks, max_idx))->Tp) 
-					max_idx = j; 
-
-			swap( sorted_index[max_idx] , sorted_index[i] ); 
-	} 
-	return sorted_index;
-		
+static void sortTask(int arr[], int n){
+	int i, key, j; 
+    for (i = 1; i < n; i++) { 
+        key = arr[i]; 
+        j = i - 1; 
+        while (j >= 0 && ( ( (xTask*) vector_get(&currentTasks, arr[j]) )->Tp ) > ( ( (xTask*) vector_get(&currentTasks, key) )->Tp )) { 
+            arr[j + 1] = arr[j]; 
+            j = j - 1; 
+        } 
+        arr[j + 1] = key; 
+    }  	
 }
 static void set_priority(){
 	printf( "Setting priority for all tasks\n" );
-	int unsorted_id[currentTasks.total];
-	int *sorted_id = sortTask(unsorted_id);		
-	
+	int sorted_id[currentTasks.total];
+	for(int i = 0; i < currentTasks.total; i++){
+		sorted_id[i] = i;
+	}	
+	int n = sizeof(sorted_id) / sizeof(sorted_id[0]); 
+	sortTask(sorted_id,n);
 	for (int i = 0; i < currentTasks.total; i++){
 		xTask* tempTask = ((xTask*) vector_get(&currentTasks, sorted_id[i]));
-		tempTask->priority = (currentTasks.total - i);
-		vTaskPrioritySet( tempTask->xTaskHandler , currentTasks.total - i);
+		tempTask->priority = currentTasks.total - i +1;
+		vTaskPrioritySet( tempTask->xTaskHandler , currentTasks.total - i +1);
 		printf( "task %d, Tp: %lu, Priority: %d\n", tempTask->index, tempTask->Tp, tempTask->priority);
 	}
 }

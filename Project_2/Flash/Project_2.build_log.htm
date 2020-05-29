@@ -28,20 +28,23 @@ Project File Date:  05/21/2020
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'F:\medhat\COLLAGE\1-AinShams Uni Eng. Collage\7-MEDHAT SPRING 2020\3-embedded\4-labs\keil\ARM\ARMCC\Bin'
 Rebuild target 'Simulation'
 assembling startup_ARMCM3.s...
-compiling basic_io.c...
-compiling list.c...
 compiling vector.c...
+compiling basic_io.c...
 compiling heap_4.c...
+compiling list.c...
 compiling freertos_evr.c...
 compiling queue.c...
 compiling system_ARMCM3.c...
 compiling port.c...
 compiling main.c...
+main.c(240): warning:  #177-D: function "swap"  was declared but never referenced
+  static void swap(int xp, int yp) { 
+main.c: 1 warning, 0 errors
 compiling EventRecorder.c...
 compiling tasks.c...
 linking...
-Program Size: Code=20384 RO-data=1324 RW-data=148 ZI-data=18096  
-".\Flash\Project_2.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=20396 RO-data=1324 RW-data=148 ZI-data=18096  
+".\Flash\Project_2.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -83,14 +86,14 @@ Package Vendor: Keil
       Include file:  Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.2.1
+      Source file:   Source\queue.c
       Include file:  Source\include\semphr.h
       Include file:  Source\include\queue.h
-      Source file:   Source\list.c
       Source file:   Source\tasks.c
       Include file:  Source\include\FreeRTOS.h
       Include file:  Source\include\task.h
+      Source file:   Source\list.c
       Source file:   Source\portable\RVDS\ARM_CM3\port.c
-      Source file:   Source\queue.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Heap:Heap_4:10.2.1
@@ -100,14 +103,14 @@ Package Vendor: Keil
 
    * Component: ARM::Device:Startup:1.2.0
       Source file:   Device\ARM\ARMCM3\Source\system_ARMCM3.c
-      Include file:  Device\ARM\ARMCM3\Include\ARMCM3.h
       Source file:   Device\ARM\ARMCM3\Source\ARM\startup_ARMCM3.s
+      Include file:  Device\ARM\ARMCM3\Include\ARMCM3.h
 
    * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0
+      Source file:   Source\EventRecorder.c
       Include file:  Config\EventRecorderConf.h
       Include file:  Include\EventRecorder.h
-      Source file:   Source\EventRecorder.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
